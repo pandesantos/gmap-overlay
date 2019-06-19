@@ -181,23 +181,9 @@ function initMap() {
         var htmlMarker = new HTMLMarker(position,gmap, info);
     }
 
-    var minZoomLevel = 10;
-
     var overlayMarker = document.getElementsByClassName('property-wrapper');
-        // Limit the zoom level
-    google.maps.event.addListener(gmap, 'zoom_changed', function() {
-        var lengthOfArray= overlayMarker.length;
-        console.log(gmap.getZoom());
-        if (gmap.getZoom() < minZoomLevel){
-            for (var j = 0; j< lengthOfArray;j++){
-                lengthOfArray[j].styles.display = 'block';
-            }
-        }else{
-            for (var k = 0; k< lengthOfArray;k++){
-                lengthOfArray[j].styles.display = 'none';
-            }
-        }
-    });
+
+
 }
 
 
